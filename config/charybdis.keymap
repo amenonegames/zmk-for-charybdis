@@ -25,7 +25,7 @@
 &kp TAB         &mt LS(Q) Q     &mt LS(W) W     &mt LS(E) E             &mt LS(R) R         &mt LS(T) T         &mt LS(Y) Y         &mt LS(U) U         &mt LS(I) I         &mt LS(O) O                 &mt LS(P) P         &mt LS(MINUS) MINUS
 &kp LCTRL       &mt LS(A) A     &mt LS(S) S     &mt LS(D) D             &mt LS(F) F         &mt LS(G) G         &mt LS(H) H         &mt LS(J) J         &mt LS(K) K         &mt LS(L) L                 &mt LS(SEMI) SEMI   &mt LS(SQT) SQT
 &kp LEFT_SHIFT       &mt LS(Z) Z   &mt LS(X) X   &mt LS(C) C            &mt LS(V) V         &mt LS(B) B         &mt LS(N) N         &mt LS(M) M         &mt LS(COMMA) COMMA  &mt LS(PERIOD) PERIOD      &mt LS(SLASH) SLASH  &mt LS(BACKSLASH) BACKSLASH
-                                &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &kp GRAVE
+                                &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &tog 2
                                               &kp SPACE   &kp BACKSPACE    &kp ENTER
             >;
 
@@ -34,37 +34,37 @@
 
         layer_1 {
             bindings = <
-&kp F1          &kp F2  &kp F3  &kp F4        &kp F5     &kp F6        &kp F7     &kp F8      &kp F9      &kp F10            &kp F11  &kp F12
-&kp CAPS        &none   &none   &none         &none      &bt BT_NXT    &none      &none       &kp UP      &none              &none    &none
-&kp LEFT_SHIFT  &none   &none   &none         &none      &bt BT_CLR    &none      &kp LEFT    &kp DOWN    &kp RIGHT          &none    &none
-&kp LCTRL       &none   &none   &none         &none      &none         &none      &none       &kp PERIOD  &kp RIGHT_BRACKET  &none    &kp EQUAL
-                                &kp LEFT_WIN  &kp SPACE  &none         &kp LALT   &kp DELETE
-                                              &mkp MB1   &mkp MB2      &kp ENTER
+&kp F1          &kp F2      &kp F3      &kp F4          &kp F5          &kp F6          &kp F7       &kp F8         &kp F9      &kp F10     &kp F11     &kp F12
+&trans          &trans      &trans      &trans          &trans          &trans          &trans       &trans         &kp UP      &trans      &trans      &trans 
+&trans          &trans      &trans      &trans          &trans          &trans          &trans       &kp LEFT       &kp DOWN    &kp RIGHT   &trans      &trans 
+&trans          &trans      &trans      &trans          &trans          &trans          &trans       &trans         &trans      &trans      &trans      &trans
+                                &trans   &trans   &trans                &trans          &trans 
+                                              &trans    &trans          &trans 
             >;
 
             trackball-bindings = <&tsl>;
         };
 
-       Mouse {
+       layer_2 {
             bindings = <
-&none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
-&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
-&none        &trans        &trans        &mkp MCLK     &trans     &none         &none       &trans     &mkp MCLK     &trans        &trans        &none
-&bootloader  &trans        &mkp RCLK     &mo 4         &mkp LCLK  &mo 5         &mo 5       &mkp LCLK  &mo 4         &mkp RCLK     &trans        &bootloader
-                                         &mo 5         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
-                                                       &none      &trans        &trans
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans      &mkp MCLK   &mkp RCLK           &trans       &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans  &trans      &trans      &trans      &trans       &trans
+                                   &trans      &trans          &trans      &trans      &trans
+                                               &trans          &trans       &trans
             >;
 
             
         };
         /* layer_2 {
             bindings = <
-&none  &none   &none    &none   &none         &none         &kp N1         &none         &none     &none  &none   &to 0
-&none  &none   &none    &none   &none         &none         &none         &none          &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG
-&none  &none   &none    &none   &none         &none         &none         &mkp LCLK     &mkp RCLK  &none  &none   &none
-&none  &none   &none    &none   &bt BT_NXT  &bt BT_CLR    &none         &none         &none     &none  &none   &none
-                                   &none         &none         &none         &none         &none
-                                                 &none         &none         &none
+&trans   &trans    &trans     &trans    &trans          &trans          &kp N1         &trans          &trans      &trans   &trans    &to 0
+&trans   &trans    &trans     &trans    &trans          &trans          &trans          &trans           &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG
+&trans   &trans    &trans     &trans    &trans          &trans          &trans          &mkp LCLK     &mkp RCLK  &trans   &trans    &trans 
+&trans   &trans    &trans     &trans    &bt BT_NXT  &bt BT_CLR    &trans          &trans          &trans      &trans   &trans    &trans 
+                                   &trans          &trans          &trans          &trans          &trans 
+                                                 &trans          &trans          &trans 
             >;
           trackball-bindings = <&tsl>;
             
