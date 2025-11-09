@@ -39,6 +39,7 @@
 	// Auto mouse layer behavior: toggle to layer 5 when trackball is moved
 	ib_tog_layer: ib_tog_layer {
 		compatible = "zmk,input-behavior-tog-layer";
+		label = "IB_TOG_LAYER";
 		#binding-cells = <1>;
 		time-to-live-ms = <2000>;  // Return to previous layer after 2 seconds of no movement
 	};
