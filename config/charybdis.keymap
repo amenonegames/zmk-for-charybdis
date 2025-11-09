@@ -47,9 +47,9 @@
        layer_2 {
             bindings = <
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &msc SCRL_UP        &trans      &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans               &trans      &trans      &trans      &trans 
 &trans      &trans     &trans      &trans      &trans          &mkp MB4    &mkp MCLK   &mkp RCLK           &mkp MB3    &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &msc SCRL_DOWN      &trans      &trans      &trans      &trans
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans               &trans      &trans      &trans      &trans
                                    &trans      &trans          &trans      &trans      &trans
                                                &trans          &trans       &trans
             >;
