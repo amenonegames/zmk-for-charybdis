@@ -31,24 +31,30 @@
 };
 
 &trackball {
-	status = "okay"; //okay
+	status = "okay";
 	irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 };
 
 / {
-	// Define temporary layer input processor for auto mouse layer
-	zip_temp_layer: zip_temp_layer {
-		compatible = "zmk,input-processor-temp-layer";
-		#input-processor-cells = <2>;
-		require-prior-idle-ms = <0>;
+	// Auto mouse layer behavior: toggle to layer 5 when trackball is moved
+	ib_tog_layer: ib_tog_layer {
+		compatible = "zmk,input-behavior-tog-layer";
+		#binding-cells = <1>;
+		time-to-live-ms = <2000>;  // Return to previous layer after 2 seconds of no movement
 	};
 
-	trackball_listener {
+	// Input listener for trackball
+	trackball_listener: trackball_listener {
 		compatible = "zmk,input-listener";
 		device = <&trackball>;
 
-		// Auto mouse layer: activate layer 5 when trackball movement is detected
-		// Layer 5 will be activated for 2000ms (2 seconds) after last movement
-		input-processors = <&zip_temp_layer 5 2000>;
+		// Activate auto mouse layer on all layers
+		input_config_0 {
+			mode = "1";
+			events = <0x02>;  // EV_REL
+			x-input-code = <0x00>;  // REL_X
+			y-input-code = <0x01>;  // REL_Y
+			bindings = <&ib_tog_layer 5>;  // Toggle to layer 5 (mouse layer)
+		};
 	};
 };
