@@ -48,7 +48,7 @@
             bindings = <
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans               &trans      &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &mkp MB4    &mkp MCLK   &mkp RCLK           &mkp MB3    &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans    &mkp MCLK   &mkp RCLK           &trans    &trans      &trans      &trans 
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans               &trans      &trans      &trans      &trans
                                    &trans      &trans          &trans      &trans      &trans
                                                &trans          &trans       &trans
