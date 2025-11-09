@@ -44,7 +44,7 @@
             trackball-bindings = <&tsl>;
         };
 
-        layer_5 {
+        layer_2 {
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
 &trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
