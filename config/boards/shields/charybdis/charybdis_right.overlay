@@ -3,8 +3,9 @@
  *
  * SPDX-License-Identifier: MIT
  */
- 
+
 #include "charybdis.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -33,4 +34,15 @@
 &trackball {
 	status = "okay"; //okay
 	irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+};
+
+/ {
+	trackball_listener {
+		compatible = "zmk,input-listener";
+		device = <&trackball>;
+
+		// Auto mouse layer: activate layer 5 when trackball movement is detected
+		// Layer 5 will be activated for 2000ms (2 seconds) after last movement
+		input-processors = <&zip_temp_layer 5 2000>;
+	};
 };
