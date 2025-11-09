@@ -5,7 +5,6 @@
  */
 
 #include "charybdis.dtsi"
-#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -37,6 +36,13 @@
 };
 
 / {
+	// Define temporary layer input processor for auto mouse layer
+	zip_temp_layer: zip_temp_layer {
+		compatible = "zmk,input-processor-temp-layer";
+		#input-processor-cells = <2>;
+		require-prior-idle-ms = <0>;
+	};
+
 	trackball_listener {
 		compatible = "zmk,input-listener";
 		device = <&trackball>;
