@@ -26,7 +26,7 @@
 &kp LCTRL       &mt LS(A) A     &mt LS(S) S     &mt LS(D) D             &mt LS(F) F         &mt LS(G) G         &mt LS(H) H         &mt LS(J) J         &mt LS(K) K         &mt LS(L) L                 &mt LS(SEMI) SEMI   &mt LS(SQT) SQT
 &kp LEFT_SHIFT       &mt LS(Z) Z   &mt LS(X) X   &mt LS(C) C            &mt LS(V) V         &mt LS(B) B         &mt LS(N) N         &mt LS(M) M         &mt LS(COMMA) COMMA  &mt LS(PERIOD) PERIOD      &mt LS(SLASH) SLASH  &mt LS(BACKSLASH) BACKSLASH
                                 &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &tog 2
-                                              &kp SPACE   &kp BACKSPACE    &kp ENTER
+                                          &kp SPACE   &kp BACKSPACE    &kp ENTER
             >;
 
             trackball-bindings = <&tmv_coarse>;
@@ -48,9 +48,9 @@
        layer_2 {
             bindings = <
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &mkp MCLK   &mkp RCLK           &trans       &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &msc SCRL_UP        &trans      &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &mkp MB4    &mkp LCLK   &mkp RCLK           &mkp MB5       &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &msc SCRL_DOWN      &trans      &trans      &trans      &trans
                                    &trans      &trans          &trans      &trans      &trans
                                                &trans          &trans       &trans
             >;
