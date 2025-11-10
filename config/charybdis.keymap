@@ -50,7 +50,7 @@
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
 &trans      &trans     &trans      &trans      &trans          &trans      &mkp MCLK   &mkp RCLK           &trans       &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans  &trans      &trans      &trans      &trans       &trans
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans
                                    &trans      &trans          &trans      &trans      &trans
                                                &trans          &trans       &trans
             >;
