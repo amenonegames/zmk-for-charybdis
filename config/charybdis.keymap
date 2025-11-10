@@ -40,7 +40,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_1";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&kp LEFT_SHIFT>, <&kp LWIN>;
         };
         
@@ -48,7 +48,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_2";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <AS(COMMA)>, <AS(LEFT_BRACKET)>;
         };
         
@@ -56,7 +56,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_3";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <AS(PERIOD)>, <AS(RIGHT_BRACKET)>;
         };
     };
