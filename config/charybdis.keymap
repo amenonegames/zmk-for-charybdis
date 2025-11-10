@@ -27,6 +27,13 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mkp LCLK>, <&mkp RCLK>;
+        };
     };
 
     keymap {
@@ -39,7 +46,7 @@
 &kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               AS(K)               AS(L)                       AS(SEMI)            AS(SQT)
 &kp LEFT_SHIFT  AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               AS(COMMA)           AS(PERIOD)                  AS(SLASH)           AS(BACKSLASH)
                                 &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &kp ENTER
-                                          &kp SPACE   &kp BACKSPACE    &to 2
+                                          &kp SPACE   &kp BACKSPACE    &td0
             >;
 
             trackball-bindings = <&tmv_coarse>;
