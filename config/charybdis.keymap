@@ -81,7 +81,7 @@
             bindings = <
 AS(F1)          AS(F2)      AS(F3)      AS(F4)          AS(F5)          AS(F6)          AS(F7)       AS(F8)         AS(F9)      AS(F10)     AS(F11)     AS(F12)
 &trans          &trans      &trans      &trans          &trans          &trans          &trans       &trans         &kp UP      &trans      &trans      &trans 
-&trans          &trans      &trans      &trans          &trans          &trans          &trans       &kp LEFT       &kp DOWN    &kp RIGHT   &trans      &trans 
+&trans          &trans      &trans      &trans          &trans          &trans          &kp HOME     &kp LEFT       &kp DOWN    &kp RIGHT   &END        &trans 
 &trans          &trans      &trans      &trans          &trans          &trans          &trans       &trans         &trans      &trans      &trans      &trans
                                 &trans   &trans   &trans                &trans          &trans 
                                               &trans    &trans          &trans 
