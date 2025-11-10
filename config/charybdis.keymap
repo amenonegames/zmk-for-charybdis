@@ -38,7 +38,7 @@
 &kp TAB         AS(Q)           AS(W)           AS(E)                   AS(R)               AS(T)               AS(Y)               AS(U)               AS(I)               AS(O)                       AS(P)               AS(MINUS)
 &kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               AS(K)               AS(L)                       AS(SEMI)            AS(SQT)
 &kp LEFT_SHIFT  AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               AS(COMMA)           AS(PERIOD)                  AS(SLASH)           AS(BACKSLASH)
-                                &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &tog 2
+                                &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &trans
                                           &kp SPACE   &kp BACKSPACE    &kp ENTER
             >;
 
@@ -60,15 +60,15 @@
 
        layer_2 {
             bindings = <
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &mkp MB4    &mkp LCLK   &mkp RCLK           &mkp MB5       &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
+&trans      &trans     &trans      &trans      &trans          &mkp MB4    &mkp LCLK   &mkp RCLK     &mkp MB5    &trans      &trans      &trans
+&trans      &trans     &trans      &trans      &trans          &trans      &mkp MCLK   &trans        &trans      &trans      &trans      &trans
                                    &trans      &trans          &trans      &trans      &trans
-                                               &trans          &trans       &trans
+                                               &mkp LCLK       &mkp RCLK   &mkp MCLK
             >;
 
-            
+            trackball-bindings = <&tmv_coarse>;
         };
         /* layer_2 {
             bindings = <
