@@ -32,7 +32,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&mkp LCLK>, <&mkp RCLK>;
         };
         
@@ -40,8 +40,24 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_1";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&kp LEFT_SHIFT>, <&kp LWIN>;
+        };
+        
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <AS(COMMA)>, <AS(LEFT_BRACKET)>;
+        };
+        
+        td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <AS(PERIOD)>, <AS(RIGHT_BRACKET)>;
         };
     };
 
@@ -53,7 +69,7 @@
 &gresc          AS(N1)          AS(N2)          AS(N3)                  AS(N4)              AS(N5)              AS(N6)              AS(N7)              AS(N8)              AS(N9)                      AS(N0)              AS(EQUAL)
 &kp TAB         AS(Q)           AS(W)           AS(E)                   AS(R)               AS(T)               AS(Y)               AS(U)               AS(I)               AS(O)                       AS(P)               AS(MINUS)
 &kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               AS(K)               AS(L)                       AS(SEMI)            AS(SQT)
-&td1            AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               AS(COMMA)           AS(PERIOD)                  AS(SLASH)           AS(BACKSLASH)
+&td1            AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               $td2                $td3                  AS(SLASH)           AS(BACKSLASH)
                                 &kp LALT  &kp LA(INSERT)  &kp DELETE       &mo 1   &kp ENTER
                                           &kp SPACE   &kp BACKSPACE    &td0
             >;
