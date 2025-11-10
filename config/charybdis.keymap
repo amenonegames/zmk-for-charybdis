@@ -38,8 +38,8 @@
 &kp TAB         AS(Q)           AS(W)           AS(E)                   AS(R)               AS(T)               AS(Y)               AS(U)               AS(I)               AS(O)                       AS(P)               AS(MINUS)
 &kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               AS(K)               AS(L)                       AS(SEMI)            AS(SQT)
 &kp LEFT_SHIFT  AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               AS(COMMA)           AS(PERIOD)                  AS(SLASH)           AS(BACKSLASH)
-                                &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &to 2
-                                          &kp SPACE   &kp BACKSPACE    &kp ENTER
+                                &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &kp ENTER
+                                          &kp SPACE   &kp BACKSPACE    &to 2
             >;
 
             trackball-bindings = <&tmv_coarse>;
