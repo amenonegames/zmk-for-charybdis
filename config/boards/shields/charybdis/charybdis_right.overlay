@@ -3,8 +3,24 @@
  *
  * SPDX-License-Identifier: MIT
  */
- 
+
 #include "charybdis.dtsi"
+
+/ {
+    zip_temp_layer_auto_mouse: zip_temp_layer_auto_mouse {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <200>;
+    };
+
+    trackball_listener {
+        input-processors = <&zip_temp_layer_auto_mouse 2 2000>;
+    };
+
+    mkp_input_listener {
+        input-processors = <&zip_temp_layer_auto_mouse 2 5000>;
+    };
+};
 
 &default_transform {
     col-offset = <6>;
