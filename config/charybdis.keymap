@@ -4,6 +4,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define AS(keycode) &as LS(keycode) keycode
+
 &lt {
     tapping-term-ms = <200>;
     flavor = "balanced";
@@ -15,15 +17,26 @@
 };
 
 / {
+    behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
             bindings = <
-&gresc          &mt LS(N1) N1   &mt LS(N2) N2   &mt LS(N3) N3           &mt LS(N4) N4       &mt LS(N5) N5       &mt LS(N6) N6       &mt LS(N7) N7       &mt LS(N8) N8       &mt LS(N9) N9               &mt LS(N0) N0       &mt LS(EQUAL) EQUAL
-&kp TAB         &mt LS(Q) Q     &mt LS(W) W     &mt LS(E) E             &mt LS(R) R         &mt LS(T) T         &mt LS(Y) Y         &mt LS(U) U         &mt LS(I) I         &mt LS(O) O                 &mt LS(P) P         &mt LS(MINUS) MINUS
-&kp LCTRL       &mt LS(A) A     &mt LS(S) S     &mt LS(D) D             &mt LS(F) F         &mt LS(G) G         &mt LS(H) H         &mt LS(J) J         &mt LS(K) K         &mt LS(L) L                 &mt LS(SEMI) SEMI   &mt LS(SQT) SQT
-&kp LEFT_SHIFT       &mt LS(Z) Z   &mt LS(X) X   &mt LS(C) C            &mt LS(V) V         &mt LS(B) B         &mt LS(N) N         &mt LS(M) M         &mt LS(COMMA) COMMA  &mt LS(PERIOD) PERIOD      &mt LS(SLASH) SLASH  &mt LS(BACKSLASH) BACKSLASH
+&gresc          AS(N1)          AS(N2)          AS(N3)                  AS(N4)              AS(N5)              AS(N6)              AS(N7)              AS(N8)              AS(N9)                      AS(N0)              AS(EQUAL)
+&kp TAB         AS(Q)           AS(W)           AS(E)                   AS(R)               AS(T)               AS(Y)               AS(U)               AS(I)               AS(O)                       AS(P)               AS(MINUS)
+&kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               AS(K)               AS(L)                       AS(SEMI)            AS(SQT)
+&kp LEFT_SHIFT  AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               AS(COMMA)           AS(PERIOD)                  AS(SLASH)           AS(BACKSLASH)
                                 &kp LALT  &kp LWIN  &kp DELETE       &mo 1   &tog 2
                                               &kp SPACE   &kp BACKSPACE    &kp ENTER
             >;
@@ -44,16 +57,6 @@
             trackball-bindings = <&tsl>;
         };
 
-       layer_2 {
-            bindings = <
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans               &trans      &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans    &mkp MCLK   &mkp RCLK           &trans    &trans      &trans      &trans 
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans               &trans      &trans      &trans      &trans
-                                   &trans      &trans          &trans      &trans      &trans
-                                               &trans          &trans       &trans
-            >;
-
             
         };
         /* layer_2 {
@@ -68,6 +71,17 @@
           trackball-bindings = <&tsl>;
             
         };
+
+
+       layer_2 {
+            bindings = <
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans              &trans      &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans               &trans      &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans    &mkp MCLK   &mkp RCLK           &trans    &trans      &trans      &trans 
+&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans               &trans      &trans      &trans      &trans
+                                   &trans      &trans          &trans      &trans      &trans
+                                               &trans          &trans       &trans
+            >;
 
 
 
