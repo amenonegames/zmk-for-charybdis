@@ -60,22 +60,22 @@
 
        layer_2 {
             bindings = <
+&to 0      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
-&trans      &trans     &trans      &trans      &trans          &mkp MB4    &mkp LCLK   &mkp RCLK     &mkp MB5    &trans      &trans      &trans
+&trans      &trans     &trans      &trans      &trans          &trans      &mkp MB4    &mkp LCLK   &mkp RCLK     &mkp MB5      &trans      &trans
 &trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
                                    &trans      &trans          &trans      &trans      &trans
-                                               &mkp LCLK       &mkp RCLK   &mkp MCLK
+                                               &trans           &trans      &trans
             >;
 
             trackball-bindings = <&tmv_coarse>;
         };
         /* layer_2 {
             bindings = <
-&trans   &trans    &trans     &trans    &trans          &trans          &kp N1         &trans          &trans      &trans   &trans    &to 0
-&trans   &trans    &trans     &trans    &trans          &trans          &trans          &trans           &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG
-&trans   &trans    &trans     &trans    &trans          &trans          &trans          &mkp LCLK     &mkp RCLK  &trans   &trans    &trans 
-&trans   &trans    &trans     &trans    &bt BT_NXT  &bt BT_CLR    &trans          &trans          &trans      &trans   &trans    &trans 
+&trans   &trans    &trans     &trans    &trans          &trans          &kp N1         &trans          &trans      &trans   &trans    &trans
+&trans   &trans    &trans     &trans    &trans          &trans          &trans          &trans          &trans      &trans  &trans   &trans
+&trans   &trans    &trans     &trans    &trans          &trans          &trans          &trans          &mkp LCLK     &mkp RCLK  &trans   &trans
+&trans   &trans    &trans     &trans    &trans          &trans          &trans          &trans          &trans      &trans   &trans    &trans 
                                    &trans          &trans          &trans          &trans          &trans 
                                                  &trans          &trans          &trans 
             >;
