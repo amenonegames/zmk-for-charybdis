@@ -51,7 +51,7 @@
         tap-ms = <100>;
     };
 
-behaviors {    
+    behaviors {    
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
@@ -102,9 +102,9 @@ behaviors {
             bindings = <AS(L)>, <&mo 2>;
         };
         
-        td4: tap_dance_4 {
+        td5: tap_dance_5 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_4";
+            label = "TAP_DANCE_5";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <AS(K)>, <&mo 1>;
@@ -119,7 +119,7 @@ behaviors {
             bindings = <
 &gresc          AS(N1)          AS(N2)          AS(N3)                  AS(N4)              AS(N5)              AS(N6)              AS(N7)              AS(N8)              AS(N9)                      AS(N0)              AS(EQUAL)
 &kp TAB         AS(Q)           AS(W)           AS(E)                   AS(R)               AS(T)               AS(Y)               AS(U)               AS(I)               AS(O)                       AS(P)               AS(MINUS)
-&kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               AS(K)               AS(L)                       AS(SEMI)            AS(SQT)
+&kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               &td5               &td4                       AS(SEMI)            AS(SQT)
 &td1            AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               &td2                &td3                  AS(SLASH)           AS(BACKSLASH)
                                 &kp LALT  &kp INSERT  &kp DELETE       &mo 3   &kp ENTER
                                           &kp SPACE   &kp BACKSPACE    &td0
