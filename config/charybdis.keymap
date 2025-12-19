@@ -101,6 +101,14 @@ behaviors {
             tapping-term-ms = <200>;
             bindings = <AS(L)>, <&mo 2>;
         };
+        
+        td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <AS(K)>, <&mo 1>;
+        };
     };
 
    
@@ -113,15 +121,39 @@ behaviors {
 &kp TAB         AS(Q)           AS(W)           AS(E)                   AS(R)               AS(T)               AS(Y)               AS(U)               AS(I)               AS(O)                       AS(P)               AS(MINUS)
 &kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               AS(K)               AS(L)                       AS(SEMI)            AS(SQT)
 &td1            AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               &td2                &td3                  AS(SLASH)           AS(BACKSLASH)
-                                &kp LALT  &kp INSERT  &kp DELETE       &mo 1   &kp ENTER
+                                &kp LALT  &kp INSERT  &kp DELETE       &mo 3   &kp ENTER
                                           &kp SPACE   &kp BACKSPACE    &td0
             >;
-             sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
-                             <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
+
 
         };
-
+        
         layer_1 {
+            bindings = <
+&trans  &trans   &trans    &trans   &trans         &trans         &trans         &trans         &trans     &trans  &trans   &trans
+&trans  &trans   &trans    &trans   &trans         &trans         &trans         &trans          &trans     &trans  &trans   &trans
+&trans  &trans   &trans    &trans   &trans         &trans         &trans         &trans     &trans          &trans  &trans   &trans
+&trans  &trans   &trans    &trans   &trans       &trans    &trans            &trans         &trans          &trans  &trans   &trans
+                                   &trans         &trans         &trans         &trans         &trans
+                                                 &trans         &trans         &trans
+            >;
+                    sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
+                                    <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
+        };
+          
+       layer_2 {
+            bindings = <
+&trans        &trans         &trans         &trans      &trans      &trans         &trans       &trans      &trans       &trans         &trans         &trans
+&trans        &trans        &trans        &trans         &trans      &trans      &trans          &trans      &trans       &trans         &trans      &trans
+&trans        &trans        &trans        &trans         &trans     &trans         &trans         &mkp LCLK     &mkp RCLK        &trans        &trans        &trans
+&trans       &trans        &trans        &trans         &trans      &trans         &trans       &trans      &trans       &trans         &trans        &trans
+                                         &trans         &trans      &trans     &trans       &trans
+                                                       &trans      &trans        &trans
+            >;
+
+        };
+          
+        layer_3 {
             bindings = <
 &gresc          AS(F1)          AS(F2)      AS(F3)      AS(F4)          AS(F5)          AS(F6)       AS(F7)         AS(F8)      AS(F9)      AS(F10)     AS(F11)
 &trans          &trans      &trans      &trans          &trans          &trans          &trans       &trans         &kp UP      &trans      &trans      AS(F12) 
@@ -130,35 +162,9 @@ behaviors {
                                 &trans   &trans   &trans                &trans          &trans 
                                               &trans    &trans          &trans 
             >;
-
-          
-        };
-
-        layer_2 {
-            bindings = <
-&none  &none   &none    &none   &none         &none         &kp N1         &none         &none     &none  &none   &to 0
-&none  &none   &none    &none   &none         &none         &none         &none          &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG
-&none  &none   &none    &none   &none         &none         &none         &mkp LCLK     &mkp RCLK  &none  &none   &none
-&none  &none   &none    &none   &bt BT_NXT  &bt BT_CLR    &none         &none         &none     &none  &none   &none
-                                   &none         &none         &none         &none         &none
-                                                 &none         &none         &none
-            >;
-       
-        };
- /*            
-       Mouse {
-            bindings = <
-&none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
-&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
-&none        &trans        &trans        &mkp MCLK     &trans     &none         &none       &trans     &mkp MCLK     &trans        &trans        &none
-&bootloader  &trans        &mkp RCLK     &mo 4         &mkp LCLK  &mo 5         &mo 5       &mkp LCLK  &mo 4         &mkp RCLK     &trans        &bootloader
-                                         &mo 5         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
-                                                       &none      &trans        &trans
-            >;
-
             
         };
-
+ /*  
         layer_4 {
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
