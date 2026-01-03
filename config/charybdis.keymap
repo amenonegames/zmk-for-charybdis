@@ -75,16 +75,6 @@
             tapping-term-ms = <200>;
             bindings = <AS(K)>, <&mo 1>;
         };
-
-        tsl_smooth: trackball_scroll_smooth {
-            compatible = "zmk,behavior-point-device-incremental";
-            label = "TRACKBALL_SCROLL_SMOOTH";
-            #trackball-binding-cells = <0>;
-            mode = "scroll-mode";
-            flavor = "default";
-            scale_mode = "dividor";
-            scale_factor = <5>;
-        };
     };
 
     keymap {
@@ -111,7 +101,7 @@
                                    &trans         &trans         &trans         &trans         &trans
                                                  &trans         &trans         &trans
             >;
-            trackball-bindings = <&tsl_smooth>;
+            trackball-bindings = <&tsl>;
         };
 
        layer_2 {
