@@ -59,6 +59,22 @@
             tapping-term-ms = <200>;
             bindings = <AS(PERIOD)>, <AS(RIGHT_BRACKET)>;
         };
+        
+        td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <AS(L)>, <&mo 2>;
+        };
+        
+        td5: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_5";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <AS(K)>, <&mo 1>;
+        };
     };
 
     keymap {
@@ -68,9 +84,9 @@
             bindings = <
 &gresc          AS(N1)          AS(N2)          AS(N3)                  AS(N4)              AS(N5)              AS(N6)              AS(N7)              AS(N8)              AS(N9)                      AS(N0)              AS(EQUAL)
 &kp TAB         AS(Q)           AS(W)           AS(E)                   AS(R)               AS(T)               AS(Y)               AS(U)               AS(I)               AS(O)                       AS(P)               AS(MINUS)
-&kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               AS(K)               AS(L)                       AS(SEMI)            AS(SQT)
+&kp LCTRL       AS(A)           AS(S)           AS(D)                   AS(F)               AS(G)               AS(H)               AS(J)               &td5               &td4                       AS(SEMI)            AS(SQT)
 &td1            AS(Z)           AS(X)           AS(C)                   AS(V)               AS(B)               AS(N)               AS(M)               &td2                &td3                  AS(SLASH)           AS(BACKSLASH)
-                                &kp LALT  &kp INSERT  &kp DELETE       &mo 1   &kp ENTER
+                                &kp LALT  &kp INSERT  &kp DELETE       &mo 3   &kp ENTER
                                           &kp SPACE   &kp BACKSPACE    &td0
             >;
 
@@ -78,6 +94,31 @@
         };
 
         layer_1 {
+            bindings = <
+&trans  &trans   &trans    &trans   &trans         &trans         &trans         &trans         &trans     &trans  &trans   &trans
+&trans  &trans   &trans    &trans   &trans         &trans         &trans         &trans          &trans     &trans  &trans   &trans
+&trans  &trans   &trans    &trans   &trans         &trans         &trans         &trans     &trans          &trans  &trans   &trans
+&trans  &trans   &trans    &trans   &trans       &trans    &trans            &trans         &trans          &trans  &trans   &trans
+                                   &trans         &trans         &trans         &trans         &trans
+                                                 &trans         &trans         &trans
+            >;
+
+            trackball-bindings = <&tsl>;
+        };
+
+       layer_2 {
+            bindings = <
+&trans        &trans         &trans         &trans      &trans      &trans         &trans       &trans      &trans       &trans         &trans         &trans
+&trans        &trans        &trans        &trans         &trans      &trans      &trans          &trans      &trans       &trans         &trans      &trans
+&trans        &trans        &trans        &trans         &trans     &trans         &trans         &mkp LCLK     &mkp RCLK        &trans        &trans        &trans
+&trans       &trans        &trans        &trans         &trans      &trans         &trans       &trans      &trans       &trans         &trans        &trans
+                                         &trans         &trans      &trans     &trans       &trans
+                                                       &trans      &trans        &trans
+            >;
+
+            trackball-bindings = <&tmv_coarse>;
+        };
+        layer_3 {
             bindings = <
 &gresc          AS(F1)          AS(F2)      AS(F3)      AS(F4)          AS(F5)          AS(F6)       AS(F7)         AS(F8)      AS(F9)      AS(F10)     AS(F11)
 &trans          &trans      &trans      &trans          &trans          &trans          &trans       &trans         &kp UP      &trans      &trans      AS(F12) 
@@ -87,37 +128,9 @@
                                               &trans    &trans          &trans 
             >;
 
-            trackball-bindings = <&tsl>;
-        };
-
-       layer_2 {
-            bindings = <
-&to 0      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
-&trans      &trans     &trans      &trans      &trans          &trans      &mkp MB4    &mkp LCLK   &mkp RCLK     &mkp MB5      &trans      &trans
-&trans      &trans     &trans      &trans      &trans          &trans      &trans      &trans        &trans      &trans      &trans      &trans
-                                   &trans      &trans          &trans      &trans      &to 0
-                                               &trans           &trans      &trans
-            >;
-
-            trackball-bindings = <&tmv_coarse>;
-        };
-        /* layer_2 {
-            bindings = <
-&trans   &trans    &trans     &trans    &trans          &trans          &kp N1         &trans          &trans      &trans   &trans    &trans
-&trans   &trans    &trans     &trans    &trans          &trans          &trans          &trans          &trans      &trans  &trans   &trans
-&trans   &trans    &trans     &trans    &trans          &trans          &trans          &trans          &mkp LCLK     &mkp RCLK  &trans   &trans
-&trans   &trans    &trans     &trans    &trans          &trans          &trans          &trans          &trans      &trans   &trans    &trans 
-                                   &trans          &trans          &trans          &trans          &trans 
-                                                 &trans          &trans          &trans 
-            >;
-          trackball-bindings = <&tsl>;
-            
-        };
 
 
-
-        layer_4 {
+       /*  layer_4 {
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
 &trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
